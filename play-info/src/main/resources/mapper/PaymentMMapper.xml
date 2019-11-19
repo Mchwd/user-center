@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuejiji.playinfo.mapper.PaymentMMapper">
+  <resultMap id="BaseResultMap" type="com.yuejiji.playinfo.domain.entity.PaymentM">
+    <!--@mbg.generated-->
+    <id column="PAYMENTID" jdbcType="VARCHAR" property="paymentid" />
+    <result column="PAYMENTNAME" jdbcType="VARCHAR" property="paymentname" />
+    <result column="PAYMENT_CODE" jdbcType="VARCHAR" property="paymentCode" />
+    <result column="PAYMENT_FREE" jdbcType="VARCHAR" property="paymentFree" />
+    <result column="PAYMENT_INTERFACE" jdbcType="VARCHAR" property="paymentInterface" />
+    <result column="ACCOUNT" jdbcType="VARCHAR" property="account" />
+    <result column="SAFECODE" jdbcType="VARCHAR" property="safecode" />
+    <result column="PARTNERID" jdbcType="VARCHAR" property="partnerid" />
+    <result column="DES" jdbcType="VARCHAR" property="des" />
+    <result column="IS_COD" jdbcType="VARCHAR" property="isCod" />
+    <result column="IS_ONLINE" jdbcType="VARCHAR" property="isOnline" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    PAYMENTID, PAYMENTNAME, PAYMENT_CODE, PAYMENT_FREE, PAYMENT_INTERFACE, ACCOUNT, SAFECODE, 
+    PARTNERID, DES, IS_COD, IS_ONLINE, `STATE`
+  </sql>
+    <select id="selectByAccount" resultMap="BaseResultMap">
+        select paymentid, paymentname, payment_code, payment_free, payment_interface, account, safecode, partnerid, des, is_cod, is_online,STATE
+        from payment_m  where ACCOUNT=#{account} and STATE="1"
+    </select>
+</mapper>

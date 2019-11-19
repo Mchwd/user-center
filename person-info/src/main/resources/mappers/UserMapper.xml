@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuejiji.personinfo.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.yuejiji.personinfo.domain.entity.User">
+    <!--@mbg.generated-->
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="realname" jdbcType="VARCHAR" property="realname" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="telno" jdbcType="VARCHAR" property="telno" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="question" jdbcType="VARCHAR" property="question" />
+    <result column="answer" jdbcType="VARCHAR" property="answer" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="userstate" jdbcType="VARCHAR" property="userstate" />
+    <result column="points" jdbcType="DOUBLE" property="points" />
+    <result column="postingcount" jdbcType="INTEGER" property="postingcount" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="registtime" jdbcType="TIMESTAMP" property="registtime" />
+    <result column="disablebegin" jdbcType="TIMESTAMP" property="disablebegin" />
+    <result column="disableend" jdbcType="TIMESTAMP" property="disableend" />
+    <result column="section" jdbcType="VARCHAR" property="section" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="groupid" jdbcType="VARCHAR" property="groupid" />
+    <result column="parttime1" jdbcType="VARCHAR" property="parttime1" />
+    <result column="parttime2" jdbcType="VARCHAR" property="parttime2" />
+    <result column="parttime3" jdbcType="VARCHAR" property="parttime3" />
+    <result column="parttime4" jdbcType="VARCHAR" property="parttime4" />
+    <result column="parttime5" jdbcType="VARCHAR" property="parttime5" />
+    <result column="parttime6" jdbcType="VARCHAR" property="parttime6" />
+    <result column="hobby" jdbcType="VARCHAR" property="hobby" />
+    <result column="QQ" jdbcType="VARCHAR" property="qq" />
+    <result column="msn" jdbcType="VARCHAR" property="msn" />
+    <result column="othercontract" jdbcType="VARCHAR" property="othercontract" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="postcode" jdbcType="VARCHAR" property="postcode" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="grade" jdbcType="VARCHAR" property="grade" />
+    <result column="gradetime" jdbcType="TIMESTAMP" property="gradetime" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+
+    user_id, username, realname, email, telno, mobile, question, answer, `password`, 
+    userstate, points, postingcount, sex, registtime, disablebegin, disableend, `section`, 
+    `position`, groupid, parttime1, parttime2, parttime3, parttime4, parttime5, parttime6, 
+    hobby, QQ, msn, othercontract, address, postcode, birthday, grade, gradetime, `state`, 
+    `uid`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+
+    delete from user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.yuejiji.personinfo.domain.entity.User" useGeneratedKeys="true" keyProperty="userId">
+
+    insert into user (user_id, username, realname, 
+      email, telno, mobile, 
+      question, answer, `password`, 
+      userstate, points, postingcount, 
+      sex, registtime, disablebegin, 
+      disableend, `section`, `position`, 
+      groupid, parttime1, parttime2, 
+      parttime3, parttime4, parttime5, 
+      parttime6, hobby, QQ, 
+      msn, othercontract, address, 
+      postcode, birthday, grade, 
+      gradetime, `state`, `uid`
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{telno,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{question,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{userstate,jdbcType=VARCHAR}, #{points,jdbcType=DOUBLE}, #{postingcount,jdbcType=INTEGER}, 
+      #{sex,jdbcType=VARCHAR}, #{registtime,jdbcType=TIMESTAMP}, #{disablebegin,jdbcType=TIMESTAMP}, 
+      #{disableend,jdbcType=TIMESTAMP}, #{section,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{groupid,jdbcType=VARCHAR}, #{parttime1,jdbcType=VARCHAR}, #{parttime2,jdbcType=VARCHAR}, 
+      #{parttime3,jdbcType=VARCHAR}, #{parttime4,jdbcType=VARCHAR}, #{parttime5,jdbcType=VARCHAR}, 
+      #{parttime6,jdbcType=VARCHAR}, #{hobby,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, 
+      #{msn,jdbcType=VARCHAR}, #{othercontract,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}, 
+      #{gradetime,jdbcType=TIMESTAMP}, #{state,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="com.yuejiji.personinfo.domain.entity.User">
+    <!--@mbg.generated-->
+    update user
+    set username = #{username,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      telno = #{telno,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      question = #{question,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      userstate = #{userstate,jdbcType=VARCHAR},
+      points = #{points,jdbcType=DOUBLE},
+      postingcount = #{postingcount,jdbcType=INTEGER},
+      sex = #{sex,jdbcType=VARCHAR},
+      registtime = #{registtime,jdbcType=TIMESTAMP},
+      disablebegin = #{disablebegin,jdbcType=TIMESTAMP},
+      disableend = #{disableend,jdbcType=TIMESTAMP},
+      `section` = #{section,jdbcType=VARCHAR},
+      `position` = #{position,jdbcType=VARCHAR},
+      groupid = #{groupid,jdbcType=VARCHAR},
+      parttime1 = #{parttime1,jdbcType=VARCHAR},
+      parttime2 = #{parttime2,jdbcType=VARCHAR},
+      parttime3 = #{parttime3,jdbcType=VARCHAR},
+      parttime4 = #{parttime4,jdbcType=VARCHAR},
+      parttime5 = #{parttime5,jdbcType=VARCHAR},
+      parttime6 = #{parttime6,jdbcType=VARCHAR},
+      hobby = #{hobby,jdbcType=VARCHAR},
+      QQ = #{qq,jdbcType=VARCHAR},
+      msn = #{msn,jdbcType=VARCHAR},
+      othercontract = #{othercontract,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      postcode = #{postcode,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=VARCHAR},
+      gradetime = #{gradetime,jdbcType=TIMESTAMP},
+      `state` = #{state,jdbcType=VARCHAR},
+      `uid` = #{uid,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>

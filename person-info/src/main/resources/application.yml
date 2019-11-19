@@ -1,0 +1,16 @@
+
+
+server:
+  port: 9091
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: server-person-info-dengdahua
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 112.74.42.138:8848
+
+debug: true

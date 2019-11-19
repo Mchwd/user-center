@@ -1,0 +1,66 @@
+server:
+  port: 23334
+
+
+spring:
+  application:
+    name: user-center-bankcard
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 112.74.42.138:8848
+  datasource:
+    url: jdbc:mysql://119.23.43.145:3309/user_center?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      max-active: 20
+      min-idle: 3
+
+      max-wait: 60000
+
+      time-between-eviction-runs-millis: 60000
+
+      min-evictable-idle-time-millis: 300000
+      validation-query: select
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+
+      pool-prepared-statements: true
+
+      filters: stat,wall,slf4j
+      max-pool-prepared-statement-per-connection-size: 20
+
+      use-global-data-source-stat: true
+
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+      web-stat-filter:
+
+        enabled: true
+
+        url-pattern: /*
+
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico, /druid/*"
+
+      stat-view-servlet:
+
+        enabled: true
+        url-pattern: /druid/*
+
+        reset-enable: false
+
+        login-username: admin
+        login-password: admin
+
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.yuejiji.bankcard.domain.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl

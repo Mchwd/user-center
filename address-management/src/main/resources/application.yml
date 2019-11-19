@@ -1,0 +1,22 @@
+server:
+  port: 9090
+
+spring:
+  # 应用名
+  application:
+    name: address-management-zsm
+  #配置数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://119.23.43.145:3309/user_center?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: root
+  #配置服务注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 112.74.42.138:8848
+# 配置mybatis
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml

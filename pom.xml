@@ -23,7 +23,7 @@
     <properties>
         <java.version>1.8</java.version>
         <mybatis.version>2.1.1</mybatis.version>
-        <commons.version>3.9</commons.version>
+        <commons.version>3.18.0</commons.version>
         <druid.version>1.1.20</druid.version>
     </properties>
     <dependencyManagement>
